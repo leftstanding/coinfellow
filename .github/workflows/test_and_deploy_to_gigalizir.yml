@@ -60,6 +60,11 @@ jobs:
       with:
         ref: master
         fetch-depth: 0
+
+    - uses: actions/setup-python@v2
+      with:
+        python-version: 3.8.1
+
     - uses: mhanberg/gigalixir-action@v0.4.0
       with:
         GIGALIXIR_USERNAME: ${{ secrets.GIGALIXIR_USERNAME }}
