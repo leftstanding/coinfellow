@@ -12,6 +12,8 @@ defmodule Coinfellow.Application do
       CoinfellowWeb.Telemetry,
       # Start the PubSub system
       {Phoenix.PubSub, name: Coinfellow.PubSub},
+      {CoinFellow.Historical, name: CoinFellow.Historical},
+      {CoinFellow.Exchanges.Supervisor, name: CoinFellow.Exchanges.Supervisor},
       # Start the Endpoint (http/https)
       CoinfellowWeb.Endpoint
       # Start a worker by calling: Coinfellow.Worker.start_link(arg)

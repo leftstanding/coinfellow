@@ -1,4 +1,6 @@
 defmodule Coinfellow do
+  defdelegate available_products(), to: CoinFellow.Exchanges
+
   defdelegate subscribe_to_trades(product),
     to: CoinFellow.Exchanges, as: :subscribe
 
