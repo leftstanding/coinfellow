@@ -8,20 +8,21 @@ jobs:
       matrix:
         otp: [23.1]
         elixir: [1.11.1]
+
     steps:
-    -uses: actions/checkout@v2
-    -uses: actions/setup-elixir@v1
-     with:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-elixir@v1
+      with: 
         otp-version: ${{ matrix.otp }}
         elixir-version: ${{ matrix.elixir }}
-    -name: Setup Node
-     uses: actions/setup-node@v1
-     with:
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
         node-version: 14.15.0
 
-      -name: Install deps
-       run: |
+    - name: Install deps
+      run: |
         mix deps.get
         npm install --prefix assets
-      -run: mix test
-
+    - run: mix test
